@@ -4,6 +4,7 @@ import random
 items_database = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','!','@','#','$','%','&']
 passwordNumber_list = []
 passwordItem_list = []
+completed_password = ''
 
 
 print('Welcome to the Password Generator 9000')
@@ -13,10 +14,12 @@ initial_response = input('Yes or No:')
 if initial_response =='':
     print('No input provided, please restart the program.')
 
-elif initial_response =='Yes':
+    exit()
+
+elif initial_response.lower() =='yes':
     pass
 
-elif initial_response =='No':
+elif initial_response.lower() =='no':
     print('Well okay! Please restart the program if you would like to use me later!')
 
     exit()
@@ -29,7 +32,7 @@ else:
 
 # 'Yes' response
 
-while initial_response == 'Yes':
+while initial_response.lower() == 'yes':
     
     print('Fabulous! Let us begin.')
 
@@ -40,8 +43,6 @@ while initial_response == 'Yes':
     
     for num in passwordNumber_list:
         passwordItem_list.append(items_database[num])
-    
-    completed_password = ''
 
     for x in passwordItem_list:
         completed_password = completed_password+ x
