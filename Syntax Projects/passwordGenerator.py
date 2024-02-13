@@ -1,7 +1,7 @@
 import random
 
-# Total database is 32 items
-items_database = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','!','@','#','$','%','&']
+# Total database is 58 items
+items_database = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','!','@','#','$','%','&']
 passwordNumber_list = []
 passwordItem_list = []
 
@@ -9,6 +9,22 @@ passwordItem_list = []
 print('Welcome to the Password Generator 9000')
 print('Would you like to know more?')
 initial_response = input('Yes or No:')
+
+if initial_response =='':
+    print('No input provided, please restart the program.')
+
+elif initial_response =='Yes':
+    pass
+
+elif initial_response =='No':
+    print('Well okay! Please restart the program if you would like to use me later!')
+
+    exit()
+
+else:
+    print('Not a vaild response, please restart the program.')
+
+    exit()
 
 
 # 'Yes' response
@@ -20,41 +36,19 @@ while initial_response == 'Yes':
     num_of_items = int(input('Please enter the number of items in your password. Please choose a number betweeen 12-18:'))
 
     for item in range(num_of_items):
-        passwordNumber_list.append(random.randint(0,32))
+        passwordNumber_list.append(random.randint(0,57))
     
     for num in passwordNumber_list:
-        passwordItem_list.append(items_database.index(num))
-        print(passwordItem_list)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 'No' response
+        passwordItem_list.append(items_database[num])
     
-while initial_response == 'No':
-    print('Well okay, restart the program if you decide you need my help.')
+    completed_password = ''
 
-    exit()
+    for x in passwordItem_list:
+        completed_password = completed_password+ x
 
-if initial_response =='':
-    print('No input provided, please restart the program.')
-else:
-    print('Not a vaild response, please restart the program.')
+    break
 
-    exit()
+print(f'Here is your completed password:{completed_password}')
 
 
 
